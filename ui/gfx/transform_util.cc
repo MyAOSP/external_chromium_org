@@ -68,7 +68,7 @@ bool Slerp(SkMScalar out[4],
   double product = Dot<4>(q1, q2);
 
   // Clamp product to -1.0 <= product <= 1.0.
-  product = std::min(std::max(product, -1.0), 1.0);
+  product = std::min(std::max(product, (double)-1.0), (double)1.0);
 
   // Interpolate angles along the shortest path. For example, to interpolate
   // between a 175 degree angle and a 185 degree angle, interpolate along the
@@ -90,9 +90,9 @@ bool Slerp(SkMScalar out[4],
     return true;
   }
 
-  double denom = std::sqrt(1.0 - product * product);
+  double denom = std::sqrt((double)1.0 - product * product);
   double theta = std::acos(product);
-  double w = std::sin(progress * theta) * (1.0 / denom);
+  double w = std::sin(progress * theta) * ((double)1.0 / denom);
 
   scale1 *= std::cos(progress * theta) - product * w;
   double scale2 = w;

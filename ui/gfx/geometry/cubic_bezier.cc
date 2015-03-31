@@ -42,9 +42,9 @@ static double bezier_interp(double x1,
   DCHECK_GE(1.0, x2);
   DCHECK_LE(0.0, x2);
 
-  x1 = std::min(std::max(x1, 0.0), 1.0);
-  x2 = std::min(std::max(x2, 0.0), 1.0);
-  x = std::min(std::max(x, 0.0), 1.0);
+  x1 = std::min(std::max(x1, (double)0.0), (double)1.0);
+  x2 = std::min(std::max(x2, (double)0.0),(double)1.0);
+  x = std::min(std::max(x, (double)0.0), (double)1.0);
 
   // We're just going to do bisection for now (for simplicity), but we could
   // easily do some newton steps if this turns out to be a bottleneck.

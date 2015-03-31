@@ -51,7 +51,7 @@ int calcHue(double temp1, double temp2, double hue) {
 double ConvertSRGB(double eight_bit_component) {
   const double component = eight_bit_component / 255.0;
   return (component <= 0.03928) ?
-      (component / 12.92) : pow((component + 0.055) / 1.055, 2.4);
+      (component / 12.92) : pow(((double)(component + 0.055) / 1.055), ((double)2.4));
 }
 
 SkColor LumaInvertColor(SkColor color) {

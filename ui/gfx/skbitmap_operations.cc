@@ -169,7 +169,7 @@ SkBitmap SkBitmapOperations::CreateButtonBackground(SkColor color,
       double mask_a = static_cast<double>(SkColorGetA(mask_row[x])) / 255.0;
 
       dst_row[x] = SkColorSetARGB(
-          static_cast<int>(std::min(255.0, bg_a + img_a) * mask_a),
+          static_cast<int>(std::min((double)255.0, bg_a + img_a) * mask_a),
           static_cast<int>(((bg_r * img_inv) + (img_r * img_alpha)) * mask_a),
           static_cast<int>(((bg_g * img_inv) + (img_g * img_alpha)) * mask_a),
           static_cast<int>(((bg_b * img_inv) + (img_b * img_alpha)) * mask_a));

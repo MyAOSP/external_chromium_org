@@ -18,7 +18,7 @@ namespace {
 static const double EPSILON = 1e-6;
 
 bool IsMultipleOfNinetyDegrees(double degrees) {
-  double remainder = fabs(fmod(degrees, 90.0));
+  double remainder = fabs(fmod(degrees, (double)90.0));
   return remainder < EPSILON || 90.0 - remainder < EPSILON;
 }
 

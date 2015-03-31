@@ -677,7 +677,7 @@ float MathUtil::SmallestAngleBetweenVectors(const gfx::Vector2dF& v1,
                                             const gfx::Vector2dF& v2) {
   double dot_product = gfx::DotProduct(v1, v2) / v1.Length() / v2.Length();
   // Clamp to compensate for rounding errors.
-  dot_product = std::max(-1.0, std::min(1.0, dot_product));
+  dot_product = std::max((double)-1.0, std::min((double)1.0, dot_product));
   return static_cast<float>(Rad2Deg(std::acos(dot_product)));
 }
 
